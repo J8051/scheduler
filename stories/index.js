@@ -13,6 +13,8 @@ import InterviewerList from "components/InterviewerList";
 import Appointment from "components/Appointment";
 import Header from "components/Appointment/Header"
 import Empty from "components/Appointment/Empty"
+import Show from "components/Appointment/Show"
+import Confirm from "components/Appointment/Confirm";
 
 //Button stories 
 storiesOf("Button", module)
@@ -161,6 +163,35 @@ storiesOf("Empty", module)
   })
   .add("Empty", () => <Empty onAdd={action("onAdd")} />)
  
+//Show stories 
+
+storiesOf("Show", module)
+  .addParameters({
+    backgrounds: [{ name: "white", value: "#fff", default: true }]
+  })
+  .add("Show", () => (
+    <Show
+      student="Lydia Miller-Jones"
+      interviewer={interviewer}
+      onEdit={action("onEdit")}
+      onDelete={action("onDelete")}
+  
+    />
+  ))
+
+  //Confirm stories 
+storiesOf("Confirm", module)
+  .addParameters({
+    backgrounds: [{ name: "white", value: "#fff", default: true }]
+  })
+  .add("Confirm", () => (
+    <Confirm
+      message="Delete the appointment?"
+      onConfirm={action("onConfirm")}
+      onCancel={ action("onCancel")}    
+    />
+  ))
+    
 
 
 
