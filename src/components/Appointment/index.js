@@ -9,6 +9,16 @@ import Form from './Form';
 
 export default function Appointment(props) {
 
+  function save(name, interviewer) {
+    const interview = {
+      student: name,
+      interviewer
+    };
+    props.bookInterview(props.id,interview)
+    transition(SHOW); 
+  }
+  
+
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -38,6 +48,7 @@ export default function Appointment(props) {
           <Form
             interviewers={props.interviewers}
             onCancel={back}
+            onSave={save}
           />
         )
       }
