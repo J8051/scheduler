@@ -13,6 +13,25 @@ import axios from "axios";
     interviewers: {}
   });
   
+   
+   function updateSpots(state, appointments) {
+     const updatedDays = [...state.days];
+     const dayObj = updatedDays.find(d => d.name === state.day);
+     const index = updatedDays.findIndex(d => d.name === state.day);
+     let spots = 0;
+
+     for (const id of dayObj.appointments) {
+       const appointment = appointments[id];
+       if (appointment.interview === null) {
+         spots++;
+       }
+     }
+
+     const day = { ...dayObj, spots };
+     updatedDays[index] = day;
+     return updatedDays;
+   }
+   
   function cancelInterview(id) {
     const appointment = {
       ...state.appointments[id],
@@ -24,10 +43,8 @@ import axios from "axios";
     };
     return axios.delete(`/api/appointments/${id}`)
       .then(() => {
-        setState({
-          ...state,
-          appointments
-        });
+        const days=updateSpots(state,appointments)
+        setState({...state,appointments, days});
       });
   
   }
@@ -47,10 +64,8 @@ import axios from "axios";
       interview,
     })
       .then(() => {
-        setState({
-          ...state,
-          appointments
-        });
+        const days= updateSpots(state,appointments)
+        setState({...state,appointments,days});
       });
   }
   
