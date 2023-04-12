@@ -11,7 +11,7 @@ import Error from './Error';
 
 
 export default function Appointment(props) {
-  console.log("PROPS",props);
+  // console.log("PROPS",props);
 
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";

@@ -32,7 +32,7 @@ export function getInterview(state, interview) {
       "avatar": state.interviewers[interview.interviewer].avatar
     }
   };
-
+  console.log("resultObjId", state.interviewers[interview.interviewer].id); 
 return resultObj
 }
 
