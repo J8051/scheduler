@@ -12,7 +12,7 @@ export default function useVisualMode(initial) {
     }
 
     history.push(secondMode);
-    setHistory(prev => ([...prev, history]));
+    setHistory(prev => (history));
 
   }
 
