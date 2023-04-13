@@ -18,7 +18,6 @@ export default function Application(props) {
 
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const dailyInterviewers = getInterviewersForDay(state, state.day);
-
   const arrayOfAppointments = Object.values(dailyAppointments);
   const apps = arrayOfAppointments.map((appointment) => {
   const interview = getInterview(state, appointment.interview);

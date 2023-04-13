@@ -6,13 +6,13 @@ const state = {
       id: 1,
       name: "Monday",
       appointments: [1, 2, 3],
-      interviewers:[1,2,3]
+      interviewers: [1, 2, 3]
     },
     {
       id: 2,
       name: "Tuesday",
       appointments: [4, 5],
-      interviewers:[4,5]
+      interviewers: [4, 5]
     }
   ],
   appointments: {
@@ -31,7 +31,7 @@ const state = {
     }
   },
   interviewers: {
-    "1": {  
+    "1": {
       "id": 1,
       "name": "Sylvia Palmer",
       "avatar": "https://i.imgur.com/LpaY82x.png"
@@ -41,23 +41,23 @@ const state = {
       name: "Tori Malcolm",
       avatar: "https://i.imgur.com/Nmx0Qxo.png"
     },
-    "3": {  
+    "3": {
       "id": 3,
       "name": "Sylvia Palmer",
       "avatar": "https://i.imgur.com/LpaY82x.png"
     },
-    "4": {  
+    "4": {
       "id": 4,
       "name": "Sylvia Palmer",
       "avatar": "https://i.imgur.com/LpaY82x.png"
     },
-    "5": {  
+    "5": {
       "id": 5,
       "name": "Sylvia Palmer",
       "avatar": "https://i.imgur.com/LpaY82x.png"
     },
   }
-}
+};
 
 
 test("getInterview returns an object with the interviewer data", () => {

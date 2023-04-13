@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import "components/InterviewerList.scss"
+import "components/InterviewerList.scss";
 import InterviewerListItem from "./InterviewerListItem";
 
 
-export default function InterviewerList(props) { 
+export default function InterviewerList(props) {
 
   const Interviewers = props.interviewers.map((interviewer) => {
     return (
@@ -14,11 +14,11 @@ export default function InterviewerList(props) {
         avatar={interviewer.avatar}
         name={interviewer.name}
         setInterviewer={() => props.onChange(interviewer.id)}
-        selected={props.value=== interviewer.id}
+        selected={props.value === interviewer.id}
       />
     );
 
-  }); 
+  });
 
   return (
     <section className="interviewers">
@@ -27,7 +27,7 @@ export default function InterviewerList(props) {
         {Interviewers}
       </ul>
     </section>
-  ); 
+  );
 
 }
 
