@@ -35,7 +35,6 @@ export default function Application(props) {
     );
   });
 
-
   return (
     <main className="layout">
 
@@ -56,7 +55,7 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {apps}
+        {apps}       
       </section>
     </main>
   );
