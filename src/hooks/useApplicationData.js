@@ -66,7 +66,10 @@ export default function useApplicationData() {
       .then(() => {
         const days = updateSpots(state, appointments);
         setState({ ...state, appointments, days });
-      });
+      })
+      .catch((error) => { 
+        console.log("ERROR❌",error);
+      })
   }
 
   useEffect(() => {
@@ -74,7 +77,7 @@ export default function useApplicationData() {
       axios.get('/api/days'),
       axios.get('/api/appointments'),
       axios.get('/api/interviewers')
-    ]).then((all) => {
+        ]).then((all) => {
       setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
     });
   }, []);
