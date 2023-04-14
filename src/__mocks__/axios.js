@@ -86,6 +86,13 @@ export default {
         statusText: "OK",
       });
     }
+  }),
+  delete: jest.fn(url => {
+    if (url === `/api/appointments/2`) {
+      return Promise.resolve({
+        status: 204,
+        statusText: "OK",
+      });
+    }
   })
-
 }

@@ -34,7 +34,7 @@ export default function Application(props) {
       />
     );
   });
-  console.log(apps)
+ 
   return (
     <main className="layout">
 
