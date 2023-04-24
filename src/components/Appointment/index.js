@@ -11,8 +11,7 @@ import Error from './Error';
 
 
 export default function Appointment(props) {
-  // console.log("PROPS",props);
-
+ 
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -39,7 +38,7 @@ export default function Appointment(props) {
         transition(SHOW); 
       })
       .catch((err) => { 
-        console.log(err)
+        console.log("ERROR😈👻🎃",err)
         transition(ERROR_SAVE,true)
       })
   }
@@ -65,7 +64,7 @@ export default function Appointment(props) {
    }
 
   function handleClose() {
-    transition(SHOW); 
+    back(); 
    } 
   
   
@@ -108,7 +107,7 @@ export default function Appointment(props) {
         mode === ERROR_SAVE && (
           <Error
             message="error saving please try again"
-            onClose={handleClose}
+            onClose={back}
           />
         )
       }
@@ -136,8 +135,6 @@ export default function Appointment(props) {
           />
         )
       }
-
-
 {
         mode === EDIT && (
           <Form

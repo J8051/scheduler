@@ -46,7 +46,6 @@ export default function useApplicationData() {
         const days = updateSpots(state, appointments);
         setState({ ...state, appointments, days });
       });
-
   }
 
   function bookInterview(id, interview) {
@@ -66,9 +65,6 @@ export default function useApplicationData() {
       .then(() => {
         const days = updateSpots(state, appointments);
         setState({ ...state, appointments, days });
-      })
-      .catch((error) => {
-        console.log("ERROR❌", error);
       });
   }
 
